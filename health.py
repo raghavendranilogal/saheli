@@ -35,7 +35,7 @@ chunks = load_chunks('data.pdf')
 # -------------------- BUILD VECTOR STORE --------------------
 @st.cache_resource
 def create_embeddings(text_chunks):
-    embedder = SentenceTransformer('all-MiniLM-L6-v2')
+    embedder = SentenceTransformer('emilyalsentzer/Bio_ClinicalBERT')
     embeddings = embedder.encode(text_chunks, convert_to_tensor=True)
     return embedder, embeddings
 
